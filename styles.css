@@ -1,0 +1,223 @@
+:root {
+  color-scheme: light;
+  --paper: #faf7f2;
+  --ink: #211e1b;
+  --red: #a52f2b;
+  --muted: #625b54;
+  --rule: #d8ccc1;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection { background: #edc8bf; color: var(--ink); }
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.23em;
+  transition: color 140ms ease;
+}
+
+a:hover { color: var(--red); }
+
+a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 5px;
+  border-radius: 1px;
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h2 { font-size: clamp(2.1rem, 4vw, 3rem); letter-spacing: -0.035em; }
+h3 { font-size: clamp(1.7rem, 2.8vw, 2.25rem); letter-spacing: -0.025em; }
+p + p { margin-top: 0.85rem; }
+section[id] { scroll-margin-top: 2rem; }
+
+.page { width: min(100% - 6rem, 1120px); margin-inline: auto; }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  padding-block: 1.4rem;
+  border-bottom: 1px solid var(--red);
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.6rem; font-size: 1rem; }
+nav a { padding-block: 0.45rem; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.file-type { white-space: nowrap; }
+
+.margin-layout { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 2.5rem; }
+
+.margin-note {
+  padding-top: 0.45rem;
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.hero { padding-block: 5rem 6.5rem; }
+.hello { padding-top: 0.9rem; font-size: 1rem; }
+
+h1 {
+  font-size: clamp(4rem, 9.2vw, 8rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+h1 span { display: block; }
+
+.introduction { max-width: 530px; margin-top: 2.2rem; margin-left: auto; }
+
+.role {
+  margin-bottom: 0.85rem;
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.text-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.7rem; padding: 0; list-style: none; }
+.introduction .text-links { margin-top: 1.15rem; }
+.text-links a { display: inline-block; padding-block: 0.35rem; }
+.project + .project { margin-top: 3.25rem; }
+.project h3 { margin-bottom: 0.7rem; }
+.project p:not(.margin-note) { max-width: 760px; }
+.personal-project h3 { font-size: clamp(3.1rem, 6.7vw, 5.2rem); letter-spacing: -0.045em; }
+.frameup h3 { font-size: clamp(2.6rem, 5vw, 3.8rem); }
+.project-detail { color: var(--muted); font-size: 1rem; }
+.project-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 1.5rem; }
+.project-status { color: var(--muted); font-family: var(--mono); font-size: 0.75rem; }
+
+.client-work { margin-top: 3.25rem; }
+.client-work::before {
+  display: block;
+  width: 88px;
+  margin-left: 188px;
+  margin-bottom: 2.8rem;
+  border-top: 2px solid var(--red);
+  content: "";
+}
+
+.section { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--red); }
+.section h2 { margin-bottom: 1.8rem; }
+.employment + .employment { margin-top: 2rem; padding-top: 1.65rem; border-top: 1px solid var(--rule); }
+.employment-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; }
+.employment h3 { font-size: 1.9rem; }
+.dates { color: var(--muted); font-family: var(--mono); font-size: 0.8rem; }
+.job-title { margin-block: 0.45rem 0.7rem; color: var(--red); font-size: 1rem; }
+.employment .job-title + p { margin-top: 0; font-size: 1.025rem; }
+.about-copy { max-width: 760px; }
+.contact { padding-bottom: 4rem; }
+.contact h2 { margin-bottom: 1.25rem; }
+.contact > div > p { max-width: 680px; }
+.email { margin-block: 1.35rem 0.8rem; overflow-wrap: anywhere; }
+.email a { color: var(--red); }
+.email a:hover { color: var(--ink); }
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 1.25rem 2rem;
+  border-top: 1px solid var(--red);
+  font-size: 0.9rem;
+}
+
+.site-footer span { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; }
+.skip-link { position: absolute; z-index: 1; top: -6rem; left: 1rem; padding: 0.7rem 1rem; background: var(--ink); color: var(--paper); }
+.skip-link:focus { top: 1rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .page { width: calc(100% - 4rem); }
+  .margin-layout { grid-template-columns: 100px minmax(0, 1fr); gap: 1.75rem; }
+  .site-header { flex-wrap: wrap; }
+  .hero { padding-block: 4rem 5rem; }
+  .client-work::before { margin-left: 128px; }
+  .project-heading { display: block; margin-bottom: 0.75rem; }
+  .project-heading h3 { margin-bottom: 0.25rem; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1.025rem; }
+  .page { width: calc(100% - 2.5rem); }
+  .site-header { gap: 0.65rem; padding-block: 1rem; }
+  .site-name { font-size: 1.3rem; }
+  nav { width: 100%; gap: 0.25rem 1.25rem; font-size: 0.9rem; }
+  .margin-layout { grid-template-columns: minmax(0, 1fr); gap: 0.85rem; }
+  .margin-note { font-size: 0.78rem; padding-top: 0; }
+  .desktop-break { display: none; }
+  .hero { gap: 1.25rem; padding-block: 2.75rem 3.5rem; }
+  .hello { font-size: 0.9rem; }
+  h1 { font-size: clamp(3rem, 13vw, 5rem); }
+  .introduction { margin-top: 1.75rem; }
+  .role { font-size: 1.85rem; }
+  .project + .project { margin-top: 2.4rem; }
+  .client-work { margin-top: 2.4rem; }
+  .client-work::before { margin-left: 0; margin-bottom: 2.25rem; width: 64px; }
+  .project h3 { font-size: 1.85rem; }
+  .personal-project h3 { font-size: 3.5rem; }
+  .frameup h3 { font-size: 2.8rem; }
+  .project-detail { font-size: 0.95rem; }
+  .section { margin-top: 3.25rem; padding-top: 1.6rem; gap: 1rem; }
+  .section h2 { font-size: 2.2rem; margin-bottom: 1.4rem; }
+  .employment-heading { flex-direction: column; gap: 0.3rem; }
+  .employment h3 { font-size: 1.8rem; }
+  .employment .job-title + p { font-size: 0.975rem; }
+  .dates { font-size: 0.75rem; }
+  .text-links { gap: 0.25rem 1.25rem; }
+  .contact { padding-bottom: 2.5rem; }
+  .site-footer { font-size: 0.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  a { transition: none; }
+}
