@@ -79,6 +79,7 @@ nav a:hover { text-decoration: underline; }
 .file-type { white-space: nowrap; }
 
 .margin-layout { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: 2.5rem; }
+.margin-layout > div { grid-column: 2; }
 
 .margin-note {
   padding-top: 0.45rem;
@@ -89,7 +90,6 @@ nav a:hover { text-decoration: underline; }
 }
 
 .hero { padding-block: 5rem 6.5rem; }
-.hello { padding-top: 0.9rem; font-size: 1rem; }
 
 h1 {
   font-size: clamp(4rem, 9.2vw, 8rem);
@@ -192,10 +192,10 @@ h1 span { display: block; }
   .site-name { font-size: 1.3rem; }
   nav { width: 100%; gap: 0.25rem 1.25rem; font-size: 0.9rem; }
   .margin-layout { grid-template-columns: minmax(0, 1fr); gap: 0.85rem; }
+  .margin-layout > div { grid-column: 1; }
   .margin-note { font-size: 0.78rem; padding-top: 0; }
   .desktop-break { display: none; }
   .hero { gap: 1.25rem; padding-block: 2.75rem 3.5rem; }
-  .hello { font-size: 0.9rem; }
   h1 { font-size: clamp(3rem, 13vw, 5rem); }
   .introduction { margin-top: 1.75rem; }
   .role { font-size: 1.85rem; }
